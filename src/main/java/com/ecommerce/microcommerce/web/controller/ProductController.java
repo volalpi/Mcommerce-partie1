@@ -8,6 +8,8 @@ import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonValue;
@@ -101,6 +103,27 @@ public class ProductController {
     public List<Product>  testeDeRequetes(@PathVariable int prix) {
 
         return productDao.chercherUnProduitCher(400);
+    }
+
+    @GetMapping(value = "/AdminProduits")
+    public MappingJacksonValue calculerMargeProduit() {
+        Iterable<Product> produits = productDao.findAll();
+
+        Map<Product, Integer> mapMargeParProduit  = new HashMap<>();
+
+        SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("prixAchat");
+
+        FilterProvider listDeNosFiltres = new SimpleFilterProvider().addFilter("monFiltreDynamique", monFiltre);
+
+        for (Product produit : produits) {
+            mapMargeParProduit.put(produit, produit.getPrix() - produit.getPrixAchat());
+        }
+
+        MappingJacksonValue produitsFiltres = new MappingJacksonValue(mapMargeParProduit);
+
+        produitsFiltres.setFilters(listDeNosFiltres);
+
+        return produitsFiltres;
     }
 
 
