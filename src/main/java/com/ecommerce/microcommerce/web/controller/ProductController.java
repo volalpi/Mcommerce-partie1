@@ -118,11 +118,9 @@ public class ProductController {
         for (Product produit : produits) {
             mapMargeParProduit.put(produit, produit.getPrix() - produit.getPrixAchat());
         }
-
         MappingJacksonValue produitsFiltres = new MappingJacksonValue(mapMargeParProduit);
 
         produitsFiltres.setFilters(listDeNosFiltres);
-
         return produitsFiltres;
     }
 
