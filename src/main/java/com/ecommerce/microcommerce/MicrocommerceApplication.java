@@ -12,3 +12,4 @@ public class MicrocommerceApplication {
 		SpringApplication.run(MicrocommerceApplication.class, args);
 	}
 }
+//Test
