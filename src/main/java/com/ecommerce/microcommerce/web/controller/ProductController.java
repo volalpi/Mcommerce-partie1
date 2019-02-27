@@ -70,7 +70,6 @@ public class ProductController {
     //ajouter un produit
     @PostMapping(value = "/Produits")
     public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
-
         if (product.getPrix() == 0) throw new ProduitGratuitException("Le produit avec l'id " + product.getId() + " n'a pas de prix de vente, il n'y a pas de produit gratuit, veuillez le corriger");
 
         Product productAdded =  productDao.save(product);

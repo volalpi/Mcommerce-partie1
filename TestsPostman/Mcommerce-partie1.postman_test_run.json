@@ -1,0 +1,256 @@
+{
+	"id": "07e7e083-583d-7476-98c4-e4fbf6eec72f",
+	"name": "Mcommerce-partie1",
+	"allTests": [],
+	"timestamp": 1551246991541,
+	"collection_id": "c1addb26-dae3-5c48-d20d-f26a5f27f0d6",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "c1addb26-dae3-5c48-d20d-f26a5f27f0d6",
+		"name": "Mcommerce-partie1",
+		"description": "",
+		"order": [
+			"c72dc346-582b-fa90-9f18-36e84d2411c9",
+			"2b505f38-33ca-6ee9-cb50-889d8dcf8b66",
+			"143b5ac0-d7d2-4ae2-e242-910a1f92c395"
+		],
+		"folders": [],
+		"folders_order": [],
+		"requests": [
+			{
+				"id": "143b5ac0-d7d2-4ae2-e242-910a1f92c395",
+				"headers": "Content-Type: application/json\n",
+				"headerData": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"enabled": true
+					}
+				],
+				"url": "localhost:9090/Produits",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "POST",
+				"collectionId": "c1addb26-dae3-5c48-d20d-f26a5f27f0d6",
+				"data": "{\n        \"id\": 4,\n        \"nom\": \"Télévision\",\n        \"prix\": 0,\n        \"prixAchat\": 250\n    }",
+				"dataMode": "raw",
+				"name": "localhost:9090/Produits",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1551246827665,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {}
+			},
+			{
+				"id": "2b505f38-33ca-6ee9-cb50-889d8dcf8b66",
+				"headers": "",
+				"headerData": [],
+				"url": "localhost:9090/AdminProduitsTrierByNom",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "c1addb26-dae3-5c48-d20d-f26a5f27f0d6",
+				"data": null,
+				"dataMode": "params",
+				"name": "localhost:9090/AdminProduitsTrierByNom",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1551246261004,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {}
+			},
+			{
+				"id": "c72dc346-582b-fa90-9f18-36e84d2411c9",
+				"headers": "Content-Type: application/json\n",
+				"headerData": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"enabled": true
+					}
+				],
+				"url": "localhost:9090/AdminProduits",
+				"queryParams": [],
+				"preRequestScript": null,
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "GET",
+				"data": "{\n        \"id\": 5,\n        \"nom\": \"Four microondededfsqdfqsfzerzerezfdsfqsdfqsdf\",\n        \"prix\": 0,\n        \"prixAchat\": 0\n    }",
+				"dataMode": "raw",
+				"version": 2,
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1551246230220,
+				"name": "localhost:9090/AdminProduits",
+				"description": "",
+				"collectionId": "c1addb26-dae3-5c48-d20d-f26a5f27f0d6",
+				"responses": []
+			}
+		],
+		"timestamp": 1551188539657,
+		"synced": false,
+		"syncedFilename": "",
+		"remote_id": 0,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"owner": "6424387",
+		"subscribed": false,
+		"createdAt": 1551188539657,
+		"updatedAt": 1551246827703,
+		"write": true,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {},
+		"sharedWithTeam": false
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"id": "c72dc346-582b-fa90-9f18-36e84d2411c9",
+			"name": "localhost:9090/AdminProduits",
+			"url": "localhost:9090/AdminProduits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				175
+			],
+			"allTests": [
+				{}
+			],
+			"time": 175,
+			"totalRequestTime": 175,
+			"iterationResults": {}
+		},
+		{
+			"id": "2b505f38-33ca-6ee9-cb50-889d8dcf8b66",
+			"name": "localhost:9090/AdminProduitsTrierByNom",
+			"url": "localhost:9090/AdminProduitsTrierByNom",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				39
+			],
+			"allTests": [
+				{}
+			],
+			"time": 39,
+			"totalRequestTime": 39,
+			"iterationResults": {}
+		},
+		{
+			"id": "143b5ac0-d7d2-4ae2-e242-910a1f92c395",
+			"name": "localhost:9090/Produits",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 406,
+				"name": "Not Acceptable",
+				"detail": "The requested resource is only capable of generating content not acceptable according to the Accept headers sent in the request."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				19
+			],
+			"allTests": [
+				{}
+			],
+			"time": 19,
+			"totalRequestTime": 19,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 0,
+	"totalFail": 0,
+	"totalTime": 233,
+	"lifecycle": "done",
+	"willStop": false,
+	"requests": [
+		{
+			"name": "localhost:9090/AdminProduits",
+			"id": "c72dc346-582b-fa90-9f18-36e84d2411c9",
+			"url": "localhost:9090/AdminProduits",
+			"time": 175,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "localhost:9090/AdminProduitsTrierByNom",
+			"id": "2b505f38-33ca-6ee9-cb50-889d8dcf8b66",
+			"url": "localhost:9090/AdminProduitsTrierByNom",
+			"time": 39,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "localhost:9090/Produits",
+			"id": "143b5ac0-d7d2-4ae2-e242-910a1f92c395",
+			"url": "localhost:9090/Produits",
+			"time": 19,
+			"responseCode": {
+				"code": 406,
+				"name": "Not Acceptable",
+				"detail": "The requested resource is only capable of generating content not acceptable according to the Accept headers sent in the request."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		}
+	],
+	"synced": false
+}
