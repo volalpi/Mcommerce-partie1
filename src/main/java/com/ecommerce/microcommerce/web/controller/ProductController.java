@@ -61,8 +61,6 @@ public class ProductController {
 
         if(produit == null) throw new ProduitIntrouvableException("Le produit avec l'id " + id + " est INTROUVABLE. Écran Bleu si je pouvais.");
 
-        if (produit.getPrix() == 0) throw new ProduitGratuitException("Le produit avec l'id " + id + " n'a pas de prix de vente, il n'y a pas de produit gratuit, veuillez le corriger");
-
         return produit;
     }
 
@@ -71,8 +69,9 @@ public class ProductController {
 
     //ajouter un produit
     @PostMapping(value = "/Produits")
-
     public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
+
+        if (product.getPrix() == 0) throw new ProduitGratuitException("Le produit avec l'id " + product.getId() + " n'a pas de prix de vente, il n'y a pas de produit gratuit, veuillez le corriger");
 
         Product productAdded =  productDao.save(product);
 
@@ -131,21 +130,14 @@ public class ProductController {
     public MappingJacksonValue trierProduitsParOrdreAlphabetique() {
         Iterable<Product> produits = productDao.findAllByOrderByNomAsc();
 
-        Map<Product, Integer> mapMargeParProduit  = new HashMap<>();
-
         SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("prixAchat");
 
         FilterProvider listDeNosFiltres = new SimpleFilterProvider().addFilter("monFiltreDynamique", monFiltre);
 
-        for (Product produit : produits) {
-            mapMargeParProduit.put(produit, produit.getPrix() - produit.getPrixAchat());
-        }
-        MappingJacksonValue produitsFiltres = new MappingJacksonValue(mapMargeParProduit);
+        MappingJacksonValue produitsFiltres = new MappingJacksonValue(produits);
 
         produitsFiltres.setFilters(listDeNosFiltres);
         return produitsFiltres;
     }
-
-
 
 }
